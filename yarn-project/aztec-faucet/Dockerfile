@@ -6,7 +6,7 @@ WORKDIR /usr/src/yarn-project/aztec-faucet
 RUN yarn cache clean && yarn workspaces focus --production
 
 # Create final, minimal size image.
-FROM node:18-alpine
+FROM node:18.19.0-alpine
 COPY --from=builder /usr/src/ /usr/src/
 WORKDIR /usr/src/yarn-project/aztec-faucet
 ENTRYPOINT ["yarn"]
